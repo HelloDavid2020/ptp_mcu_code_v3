@@ -228,8 +228,8 @@ static void at_info( char* cmd )
 {
 
     printf("===================================\r\n");
-    printf("-> BOOTLOADER\r\n");
-    printf("-> Device ID= %p\r\n",(void*)HAL_GetDEVID());
+    printf("-> PTP BOX\r\n");
+    printf("-> Version= 3.0.0\r\n");
     printf("-> BuildTime= %s\r\n",build_time());
 
 }

@@ -164,7 +164,7 @@
           <Type>0</Type>
           <LineNumber>414</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134249554</Address>
+          <Address>134249558</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -174,6 +174,22 @@
           <Filename>../Core/Src/tim.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\stm32g473\../Core/Src/tim.c\414</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>410</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134249550</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>../Core/Src/tim.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\stm32g473\../Core/Src/tim.c\410</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

@@ -1,0 +1,162 @@
+Configuration	stm32g473
+STM32CubeMX 	6.4.0
+Date	12/31/2021
+MCU	STM32G473VCTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC4	IN1 Differential	ADC4_IN1	PE14
+ADC4	IN1 Differential	ADC4_IN2	PE15
+ADC4	IN3 Differential	ADC4_IN3	PB12
+ADC4	IN3 Differential	ADC4_IN4	PB14
+FDCAN1	Activated	FDCAN1_RX	PD0
+FDCAN1	Activated	FDCAN1_TX	PD1
+I2C1	I2C	I2C1_SCL	PA15
+I2C1	I2C	I2C1_SDA	PB7
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PF0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PF1-OSC_OUT
+RCC	Clock-out	RCC_MCO	PG10-NRST
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
+SYS	Internal voltage reference	VREFBUF_OUT	VREF+
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+SYS	Dead Battery Signals disabled	SYS_VS_DBSignals	VP_SYS_VS_DBSignals
+TIM3	Input Capture direct mode	TIM3_CH1	PE2
+TIM3	Input Capture direct mode	TIM3_CH2	PE3
+TIM3	Input Capture direct mode	TIM3_CH3	PE4
+TIM3	Input Capture direct mode	TIM3_CH4	PE5
+TIM17	Enable_Timer	TIM17_VS_ClockSourceINT	VP_TIM17_VS_ClockSourceINT
+USART1	Multiprocessor Communication	USART1_RX	PC5
+USART1	Multiprocessor Communication	USART1_TX	PC4
+USART2	Asynchronous	USART2_RX	PA3
+USART2	Asynchronous	USART2_TX	PD5
+USB	Device (FS)	USB_DM	PA11
+USB	Device (FS)	USB_DP	PA12
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+1	PE2	TIM3_CH1	
+2	PE3	TIM3_CH2	
+3	PE4	TIM3_CH3	
+4	PE5	TIM3_CH4	
+10	PF9	GPIO_Output	
+12	PF0-OSC_IN	RCC_OSC_IN	
+13	PF1-OSC_OUT	RCC_OSC_OUT	
+14	PG10-NRST	RCC_MCO	
+17	PC2	GPIO_Input	KEY2
+18	PC3	GPIO_Output	
+20	PA0	GPIO_Input	KEY1
+25	PA3	USART2_RX	
+30	PC4	USART1_TX	
+31	PC5	USART1_RX	
+32	PB0	GPIO_Output	
+33	PB1	GPIO_Output	
+36	VREF+	VREFBUF_OUT	
+45	PE14	ADC4_IN1	
+46	PE15	ADC4_IN2	
+50	PB11	GPIO_Output	
+51	PB12	ADC4_IN3	
+53	PB14	ADC4_IN4	
+72	PA11	USB_DM	
+73	PA12	USB_DP	
+76	PA13	SYS_JTMS-SWDIO	
+77	PA14	SYS_JTCK-SWCLK	
+78	PA15	I2C1_SCL	
+82	PD0	FDCAN1_RX	
+83	PD1	FDCAN1_TX	
+85	PD3	GPIO_Input	KEY3
+87	PD5	USART2_TX	
+94	PB7	I2C1_SDA	
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC4	IN1 Differential	ADC4_IN1	PE14
+ADC4	IN1 Differential	ADC4_IN2	PE15
+ADC4	IN3 Differential	ADC4_IN3	PB12
+ADC4	IN3 Differential	ADC4_IN4	PB14
+FDCAN1	Activated	FDCAN1_RX	PD0
+FDCAN1	Activated	FDCAN1_TX	PD1
+I2C1	I2C	I2C1_SCL	PA15
+I2C1	I2C	I2C1_SDA	PB7
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PF0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PF1-OSC_OUT
+RCC	Clock-out	RCC_MCO	PG10-NRST
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
+SYS	Internal voltage reference	VREFBUF_OUT	VREF+
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+SYS	Dead Battery Signals disabled	SYS_VS_DBSignals	VP_SYS_VS_DBSignals
+TIM3	Input Capture direct mode	TIM3_CH1	PE2
+TIM3	Input Capture direct mode	TIM3_CH2	PE3
+TIM3	Input Capture direct mode	TIM3_CH3	PE4
+TIM3	Input Capture direct mode	TIM3_CH4	PE5
+TIM17	Enable_Timer	TIM17_VS_ClockSourceINT	VP_TIM17_VS_ClockSourceINT
+USART1	Multiprocessor Communication	USART1_RX	PC5
+USART1	Multiprocessor Communication	USART1_TX	PC4
+USART2	Asynchronous	USART2_RX	PA3
+USART2	Asynchronous	USART2_TX	PD5
+USB	Device (FS)	USB_DM	PA11
+USB	Device (FS)	USB_DP	PA12
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+1	PE2	TIM3_CH1	
+2	PE3	TIM3_CH2	
+3	PE4	TIM3_CH3	
+4	PE5	TIM3_CH4	
+10	PF9	GPIO_Output	
+12	PF0-OSC_IN	RCC_OSC_IN	
+13	PF1-OSC_OUT	RCC_OSC_OUT	
+14	PG10-NRST	RCC_MCO	
+17	PC2	GPIO_Input	KEY2
+18	PC3	GPIO_Output	
+20	PA0	GPIO_Input	KEY1
+25	PA3	USART2_RX	
+30	PC4	USART1_TX	
+31	PC5	USART1_RX	
+32	PB0	GPIO_Output	
+33	PB1	GPIO_Output	
+36	VREF+	VREFBUF_OUT	
+45	PE14	ADC4_IN1	
+46	PE15	ADC4_IN2	
+50	PB11	GPIO_Output	
+51	PB12	ADC4_IN3	
+53	PB14	ADC4_IN4	
+72	PA11	USB_DM	
+73	PA12	USB_DP	
+76	PA13	SYS_JTMS-SWDIO	
+77	PA14	SYS_JTCK-SWCLK	
+78	PA15	I2C1_SCL	
+82	PD0	FDCAN1_RX	
+83	PD1	FDCAN1_TX	
+85	PD3	GPIO_Input	KEY3
+87	PD5	USART2_TX	
+94	PB7	I2C1_SDA	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : stm32g473
+Project Folder : D:\GIT\Robot\stm32g473_demo\pcb
+Toolchain / IDE : MDK-ARM V5.27
+Firmware Package Name and Version : STM32Cube FW_G4 V1.5.0
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

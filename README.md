@@ -1,1 +1,1 @@
-# ptp_mcu_code_v3
+stm32g473_demo

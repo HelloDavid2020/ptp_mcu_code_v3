@@ -32,7 +32,7 @@
 
 #define     PRESCALER_VALUE     (uint32_t)(((SystemCoreClock) / 1000000) - 1)
 
-#define     PULSE_DELTA_WINDOW     (250)       // 250us based on TIM3 1us counter
+#define     PULSE_DELTA_WINDOW     (50)       // 50us based on TIM3 1us counter
 
 uint32_t freq=20000; 
 uint16_t duty=50;
@@ -332,10 +332,12 @@ void capture_stop(input_capture_t * capture)
 // 1 tick = 10us
 void capture_pulse_handle(input_capture_t * capture)
 {
-
-			
 	
-    int32_t delta =  diff_calculate( capture-> pulse_previous , capture->pulse_last);        
+    int32_t delta =  diff_calculate( capture-> pulse_previous , capture->pulse_last);   
+
+		// 10 KHz -- T=100us, Positive Pulse width = 50us
+		//  5 KHz -- T=200us, Positive Pulse width = 100us
+
     // search lcd highlight time line    
     if( delta < PULSE_DELTA_WINDOW)
     {

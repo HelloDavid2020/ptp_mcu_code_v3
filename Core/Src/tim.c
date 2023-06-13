@@ -399,10 +399,10 @@ void pulse_data_parser(input_capture_t * capture)
             printf("filter time count : %d, ",pulse_filter);
 
             //  remove ( PULSE_CAPTURE_FILTERCNT+1 ) data
-            for(i =0; i <  (pulse_filter); i++)
+            for(i =0; i <  pulse_filter; i++)
             {
-                filter_time += capture->pulse_array[capture->pulse_index-i];
-                printf("%d ",capture->pulse_array[capture->pulse_index-i]);
+                filter_time += capture->pulse_array[capture->pulse_index-1-i];
+                printf("%d ",capture->pulse_array[capture->pulse_index-1-i]);
             }
             printf("\r\n");
         }

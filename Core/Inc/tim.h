@@ -95,10 +95,10 @@ void MX_TIM17_Init(void);
 /* USER CODE BEGIN Prototypes */
 uint32_t tim_get_period(void);
 uint32_t tim_get_frequency(void);
-void capture_pulse_handle(input_capture_t * capture);
+void find_high_light_pulses(input_capture_t * capture);
 void capture_start(input_capture_t * capture);
 void capture_stop(input_capture_t * capture);
-void capture_handle(input_capture_t * capture);
+void pulse_data_parser(input_capture_t * capture);
 int32_t diff_calculate(uint32_t value_start, uint32_t value_end);
 
 /* USER CODE END Prototypes */

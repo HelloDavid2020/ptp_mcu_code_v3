@@ -170,7 +170,7 @@ int main(void)
 
     bsp_led_blink(333);
     
-    capture_handle(&input_capture);
+    pulse_data_parser(&input_capture);
     system_event_handler();
     lcd_infor_update(&capture_data, 300);
     

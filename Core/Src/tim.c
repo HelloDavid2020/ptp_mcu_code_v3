@@ -249,7 +249,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
                     input_capture.data_ready =1;
                 }
                 
-                capture_pulse_handle(&input_capture);
+                find_high_light_pulses(&input_capture);
 							}
             }
             __HAL_TIM_SET_COUNTER(htim, 0);
@@ -330,7 +330,7 @@ void capture_stop(input_capture_t * capture)
 }
 
 // 1 tick = 10us
-void capture_pulse_handle(input_capture_t * capture)
+void find_high_light_pulses(input_capture_t * capture)
 {
 	
     int32_t delta =  diff_calculate( capture-> pulse_previous , capture->pulse_last);   
@@ -361,12 +361,12 @@ void capture_pulse_handle(input_capture_t * capture)
 
 }
 
-void capture_handle(input_capture_t * capture)
+void pulse_data_parser(input_capture_t * capture)
 {
     
-    uint32_t pulse_capture_filter_time = 0;
+    uint32_t filter_time = 0;
     uint32_t i =0;
-    uint32_t time_cal =0;
+    uint32_t time_diff =0;
 
     // if data is avalible 
     if(capture->data_ready == 1)
@@ -378,7 +378,7 @@ void capture_handle(input_capture_t * capture)
         
         if(capture->tick_end == 0)
         {
-            printf("Invalid capture\r\n");
+            printf("Invalid capture data\r\n");
             printf("Capture End\r\n");
             printf("----------------------------------------------------------\r\n\r\n");
 
@@ -392,26 +392,33 @@ void capture_handle(input_capture_t * capture)
         for( i =0; i< capture->pulse_index; i++)
             printf("%d ",capture->pulse_array[i]);
          printf("\r\n");
+				
+				// calculate filter time
         if(capture->pulse_index > pulse_filter)
         {
-            printf("Removed Arrays : %d, ",pulse_filter+1);
+            printf("Calculate filter time : %d, ",pulse_filter+1);
 
             //  remove ( PULSE_CAPTURE_FILTERCNT+1 ) data
             for(i =0; i <  (pulse_filter+1); i++)
             {
-                pulse_capture_filter_time += capture->pulse_array[capture->pulse_index-1-i];
+                filter_time += capture->pulse_array[capture->pulse_index-1-i];
                 printf("%d ",capture->pulse_array[capture->pulse_index-1-i]);
             }
             printf("\r\n");
         }
-        printf("Removed Pulses : %d us\r\n",pulse_capture_filter_time);
-        time_cal = diff_calculate(capture->tick_start, capture->tick_end);
-        if(time_cal >  pulse_capture_filter_time)
+				
+        printf("filter time= %d us\r\n",filter_time);
+				
+				
+				// calcutlate delta time dT
+        time_diff = diff_calculate(capture->tick_start, capture->tick_end);
+				
+				
+        if(time_diff >  filter_time)
         {
-            time_cal = time_cal -  pulse_capture_filter_time;
-
-            
-            capture_data.real_value = time_cal;
+						// find first wave edge
+            time_diff = time_diff -  filter_time;
+            capture_data.real_value = time_diff;
             
             capture_data.sum_value +=  capture_data.real_value;
             
@@ -431,7 +438,7 @@ void capture_handle(input_capture_t * capture)
             
 
             
-            printf("Time Calculate : %.3f ms\r\n",time_cal/1000.000 );
+            printf("Time Calculate : %.3f ms\r\n",time_diff/1000.000 );
             printf("Capture End\r\n");
         }
         else

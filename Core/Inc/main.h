@@ -56,7 +56,7 @@ extern uint32_t sample_count;
 extern __IO uint32_t pulse_filter;
 extern __IO uint8_t blink_flag;
 extern uint32_t system_sleep ;
-
+extern __IO uint32_t led_on_time;
 
 /* USER CODE END ET */
 

@@ -24,7 +24,7 @@ static void at_status( char* cmd );
 static void at_filter( char* cmd );
 static void at_start( char* cmd );
 static void at_pulse_capture_filter( char* cmd );
-
+static void at_led_on_time( char* cmd );
 
                        
 
@@ -52,9 +52,38 @@ const at_cmd_items_t at_command_items[] =
     {"AT+FILTER",           at_filter},
     {"AT+START",            at_start},
     {"AT+PULSEFILTER",      at_pulse_capture_filter}, // PULSE_CAPTURE_FILTERCNT
+    {"AT+LEDONTIME",        at_led_on_time}, // PULSE_CAPTURE_FILTERCNT
 
 
 };
+
+
+static void at_led_on_time( char* cmd )
+{
+    uint32_t ontime = 0;
+    char *p = strstr(cmd,"AT+LEDONTIME=");
+    if(p)
+    {
+        char *cmd_target =strstr(cmd,"AT+LEDONTIME=");
+
+        if(sscanf((char*)cmd_target,"AT+LEDONTIME=%d", &ontime) == 1)
+        {
+						if(led_on_time<=10 && led_on_time >= 1)
+            {
+							led_on_time = ontime;
+							printf("+LEDONTIME=%d\r\n",led_on_time);
+						}
+						else
+						{
+							printf("ERROR: Invalid Data.\r\n");
+							printf("+LEDONTIME=%d\r\n",led_on_time);
+	
+						}
+        }
+
+       
+    }
+}
 
 
 static void at_pulse_capture_filter( char* cmd )

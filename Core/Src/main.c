@@ -40,6 +40,7 @@ uint32_t sample_count = 1;
 uint32_t system_sleep = 0;
 
 __IO uint32_t pulse_filter = PULSE_CAPTURE_FILTERCNT;
+__IO uint32_t led_on_time = 5;
 
 /* USER CODE END PTD */
 

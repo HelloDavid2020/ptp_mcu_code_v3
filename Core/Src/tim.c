@@ -32,7 +32,7 @@
 
 #define     PRESCALER_VALUE     (uint32_t)(((SystemCoreClock) / 1000000) - 1)
 
-#define     PULSE_DELTA_WINDOW     (50)       // 50us based on TIM3 1us counter
+#define     PULSE_DELTA_WINDOW     (10)       // 50us based on TIM3 1us counter
 
 uint32_t freq=20000; 
 uint16_t duty=50;
@@ -236,7 +236,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             // pulse width storage
             if(input_capture.enable)
             {
-							if(pulse_value > 2)
+							if(pulse_value > 2 && pulse_value < 20)
 							{
                 input_capture.pulse_last =   pulse_value;
                 input_capture.pulse_array[input_capture.pulse_index] = input_capture.pulse_last;

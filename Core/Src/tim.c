@@ -236,6 +236,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             // pulse width storage
             if(input_capture.enable)
             {
+							// pwm min width and max width  2us < PWM < 20us
 							if(pulse_value > 2 && pulse_value < 20)
 							{
                 input_capture.pulse_last =   pulse_value;

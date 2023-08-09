@@ -123,15 +123,7 @@ int main(void)
 
     printf ("Photon Capture Start\r\n");
 
-    #if 0
-    SENSOR_S2_LOW(); 
-    SENSOR_S3_LOW(); 
-    printf ("FLITER=RED, S2=0,S3=0\r\n");
-    #else
-    SENSOR_S2_HIGH(); 
-    SENSOR_S3_LOW(); 
-    printf ("FLITER=WHITE, S2=1,S3=0\r\n");
-    #endif
+//
     printf ("------------------------------------\r\n");
     printf ("------------------------------------\r\n\r\n");
 

@@ -170,34 +170,35 @@ static void at_sample( char* cmd )
 
 static void at_filter( char* cmd )
 {
-    char *p = strstr(cmd,"AT+FILTER=RED");
-    if(strstr(cmd,"AT+FILTER=RED"))
-    {
-        SENSOR_S2_LOW(); 
-        SENSOR_S3_LOW(); 
-        printf ("FLITER=RED, S2=0,S3=0\r\n");
-    }
-    else if(strstr(cmd,"AT+FILTER=GREEN"))
-    {
-        SENSOR_S2_HIGH(); 
-        SENSOR_S3_HIGH(); 
-        printf ("FLITER=GREEN, S2=1,S3=1\r\n");
+    printf ("No Longer Support\r\n");
+//    char *p = strstr(cmd,"AT+FILTER=RED");
+//    if(strstr(cmd,"AT+FILTER=RED"))
+//    {
+//        SENSOR_S2_LOW(); 
+//        SENSOR_S3_LOW(); 
+//        printf ("FLITER=RED, S2=0,S3=0\r\n");
+//    }
+//    else if(strstr(cmd,"AT+FILTER=GREEN"))
+//    {
+//        SENSOR_S2_HIGH(); 
+//        SENSOR_S3_HIGH(); 
+//        printf ("FLITER=GREEN, S2=1,S3=1\r\n");
 
-    }        
-    else if(strstr(cmd,"AT+FILTER=BLUE"))
-    {
-        SENSOR_S2_LOW(); 
-        SENSOR_S3_HIGH(); 
-        printf ("FLITER=BLUE, S2=0,S3=1\r\n");
+//    }        
+//    else if(strstr(cmd,"AT+FILTER=BLUE"))
+//    {
+//        SENSOR_S2_LOW(); 
+//        SENSOR_S3_HIGH(); 
+//        printf ("FLITER=BLUE, S2=0,S3=1\r\n");
 
-    }    
-    else if(strstr(cmd,"AT+FILTER=WHITE"))
-    {
-        SENSOR_S2_HIGH(); 
-        SENSOR_S3_LOW(); 
-        printf ("FLITER=WHITE, S2=1,S3=0\r\n");
+//    }    
+//    else if(strstr(cmd,"AT+FILTER=WHITE"))
+//    {
+//        SENSOR_S2_HIGH(); 
+//        SENSOR_S3_LOW(); 
+//        printf ("FLITER=WHITE, S2=1,S3=0\r\n");
 
-    }      
+//    }      
     
 }
 
